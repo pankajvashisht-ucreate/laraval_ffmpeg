@@ -20,7 +20,7 @@ class FileUploadController extends Controller
         $image_name  = time().'.'.$extension;
         $destination_path    = public_path('/uploads');
         if($image_data->move($destination_path, $image_name)){
-            $new_image=app('resize')->size(100)->makeImage($image_name);
+            $new_image=app('resize')->size(100)->extension('png')->makeImage($image_name);
             return back()->with('message','There is some issue!')->with('images',[
                 'new_image' => $new_image,
                 'image_name' => $image_name
