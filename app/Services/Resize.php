@@ -16,7 +16,7 @@ class Resize {
         if($scale>0){
             $this->size=$scale;
         }
-        $this->upload_path=public_path().'/'.$upload_path.'/';
+        $this->upload_path=getcwd().'/'.$upload_path.'/';
     }
 
    
@@ -62,13 +62,12 @@ class Resize {
     }
 
      /**
-     * target the dir of the file
+     * target the dir if 
      * @param string 
      * @return object 
     */
     public function UploadDir(string $folder){
-        $this->upload_path="/".$folder.'/';
-        $this->upload_path=str_replace('/app/','', $this->upload_path);
+        $this->upload_path=getcwd().'/public/'.$folder;
         return $this;
     }
 
