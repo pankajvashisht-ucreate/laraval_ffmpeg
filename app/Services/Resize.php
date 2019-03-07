@@ -67,7 +67,7 @@ class Resize {
      * @return object 
     */
     public function UploadDir(string $folder){
-        $this->upload_path=getcwd().'/public/'.$folder;
+        $this->upload_path=public_path().'/'.$folder;
         return $this;
     }
 
