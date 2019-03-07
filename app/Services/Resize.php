@@ -16,7 +16,7 @@ class Resize {
         if($scale>0){
             $this->size=$scale;
         }
-        $this->upload_path=getcwd().'/'.$upload_path.'/';
+        $this->upload_path=public_path().'/'.$upload_path.'/';
     }
 
    
@@ -61,8 +61,14 @@ class Resize {
         return $this;
     }
 
-    public function UploadDir(){
-
+     /**
+     * target the dir of the file
+     * @param string 
+     * @return object 
+    */
+    public function UploadDir(string $folder){
+        $this->upload_path=public_path().'/'.$folder.'/';
+        return $this;
     }
 
     /**
@@ -73,7 +79,7 @@ class Resize {
 
     public function makeImage(String $image_name){
         $this->image_name=$image_name;
-        self::scale();
+        $this->scale();
         return $this->size.'_'.$this->new_image;
     }
 
