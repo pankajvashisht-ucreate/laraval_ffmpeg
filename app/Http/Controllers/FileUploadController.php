@@ -8,6 +8,7 @@ use App\Models\Image;
 class FileUploadController extends Controller
 {
     public function index(){
+        dd(chdir());
         return  view('index');
     }
 
