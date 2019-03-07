@@ -16,7 +16,7 @@ class Resize {
         if($scale>0){
             $this->size=$scale;
         }
-        $this->upload_path=getcwd().'/'.$upload_path.'/';
+        $this->upload_path=getcwd().'/public/'.$upload_path.'/';
     }
 
    
