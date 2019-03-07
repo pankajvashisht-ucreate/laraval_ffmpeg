@@ -8,7 +8,6 @@ use App\Models\Image;
 class FileUploadController extends Controller
 {
     public function index(){
-        dd(public_path());
         return  view('index');
     }
 
