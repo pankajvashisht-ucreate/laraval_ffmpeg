@@ -40,7 +40,7 @@ class ScaleImage extends Command
     {
         $image_data=$image->orderBy('id','desc')->first();
         if(count($image_data->toArray())>0){
-            $image_data->scale_image=app('resize')->size(100)->extension('png')->makeImage($image_data->name);
+            $image_data->scale_image=app('resize')->AwsFolder('images')->size(100)->extension('png')->awsImage($image_data->name);
             $image_data->save();
             $this->info('Image Make Successfully'); // green
         }

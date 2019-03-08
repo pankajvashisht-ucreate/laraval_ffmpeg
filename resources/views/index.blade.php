@@ -21,7 +21,7 @@
 
     @if ($images = Session::get('images'))
            <p>Input Image:</p>
-               <img src="uploads/{{ $images['image_name'] }}">
+               <img src="{{ $images['image_name'] }}">
            <br/>
         
    @endif
